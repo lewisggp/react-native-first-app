@@ -15,17 +15,17 @@ type GameCardProps = {
 export function GameCard({ game }: GameCardProps) {
     return (
         <ThemedView
-            className="bg-slate-500/10 p-4 rounded-xl mb-10 items-center"
+            className="bg-slate-500/10 p-4 rounded-xl mb-5 flex-row"
             key={game.slug}
         >
             <Image source={{ uri: game.image }} style={styles.image} />
-            <ThemedView className="mt-4 items-center" style={{ backgroundColor: 'transparent' }} >
+            <ThemedView className="ml-4" style={{ backgroundColor: 'transparent', flex: 1 }} >
                 <ThemedText className="text-xl font-bold mb-2">
                     {game.title}
                 </ThemedText>
                 <GameScore score={game.score} maxScore={100} />
                 <ThemedText className="text-base text-justify mt-2">
-                    {game.description}
+                    {game.description.slice(0, 105)}...
                 </ThemedText>
             </ThemedView>
         </ThemedView>
