@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { ActivityIndicator, Image, StyleSheet } from "react-native";
 
-import { Link, useLocalSearchParams } from "expo-router";
+import { Link, Stack, useLocalSearchParams } from "expo-router";
 
 import { useThemeColor } from "@/hooks/useThemeColor";
 
@@ -30,6 +30,11 @@ export default function Detail() {
             <ThemedView
                 className='flex-1 justify-center items-center'
             >
+                <Stack.Screen
+                    options={{
+                        headerTitle: ''
+                    }}
+                />
                 <ActivityIndicator color={color} size={'large'} />
             </ThemedView>
         );
@@ -44,6 +49,11 @@ export default function Detail() {
                     style={styles.gameImage}
                 />
             }>
+            <Stack.Screen
+                options={{
+                    headerTitle: game.title
+                }}
+            />
             <ThemedView
                 className='flex-1 justify-center items-center'
             >
