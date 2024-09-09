@@ -18,7 +18,7 @@ export function GameCard({ game }: GameCardProps) {
     return (
         <Link
             href={{
-                pathname: '/(tabs)/details/[id]',
+                pathname: '/details/[id]',
                 params: { id: game.slug }
             }}
             asChild
